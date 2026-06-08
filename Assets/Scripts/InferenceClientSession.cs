@@ -8,6 +8,7 @@ using Grpc.Core;
 using Google.Protobuf;
 using Transport;
 
+using Newtonsoft.Json;
 
 namespace PolicyClient
 {
@@ -50,8 +51,10 @@ namespace PolicyClient
 
                 // Open the observation stream once; we reuse it across MakePrediction() calls
                 observationStream = client.SendObservations(cancellationToken: cts.Token);
-
                 Debug.Log($"[InferenceClientSession] Connected to {settings.ipAddress}:{settings.Port}");
+
+                
+
                 return true;
             }
             catch (Exception ex)
@@ -65,14 +68,28 @@ namespace PolicyClient
         /// Send policy config to server (call once after Start).
         /// data is whatever PolicySetup.data expects — pass null to send empty.
         /// </summary>
-        public bool SendPolicyInstructions(byte[] data = null)
+        public bool SendPolicyInstructions()
         {
+            PolicySetup? setup = null;
+            switch (settings.policyInstructionFormatType)
+            {
+                case PolicyInstructionFormatType.LeRobot:
+
+                    setup = LeRobotUtils.SetupPolicy(
+                        settings.policyType.ToString(),
+                        settings.policyPath.ToString(),
+                        settings.actionsPerChunk,
+                        settings.VisualShapes,
+                        settings.stateShape,
+                        settings.actionShape
+                    );
+                    break;
+                default:
+                    Debug.LogError($"[InferenceClientSession] SendPolicyInstructions() failed: PolicyInstructionFormatType {settings.policyInstructionFormatType} not handled.");
+                    break;
+            }
             try
             {
-                var setup = new PolicySetup
-                {
-                    Data = data != null ? ByteString.CopyFrom(data) : ByteString.Empty
-                };
                 client.SendPolicyInstructions(setup);
                 return true;
             }

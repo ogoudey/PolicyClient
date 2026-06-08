@@ -620,10 +620,19 @@ MonoBehaviour:
         taskInferenceNetworkSettings:
           ipAddress: 127.0.0.1
           Port: 8080
-          policyOutputType: 0
+          actionsPerChunk: 50
+          policyInstructionFormatType: 0
+          policyType: 0
+          visualShapes:
+          - key: front
+            shape: 0300000068010000e0010000
+          - key: top
+            shape: 0300000068010000e0010000
+          stateShape: 06000000
+          actionShape: 06000000
         taskInferenceManagerSettings:
           actionChunkLength: 50
-          stepsAtToPrediction: 50
+          stepsAtToPrediction: 30
 --- !u!4 &1617528455
 Transform:
   m_ObjectHideFlags: 0
