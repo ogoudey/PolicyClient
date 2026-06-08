@@ -12,7 +12,17 @@ namespace PolicyClient
         protected int currentStep;
         protected Queue<float[]> actionQueue;
         protected bool isPredictionOutGoing;
-        protected InferenceState state = InferenceState.Init;
+        private InferenceState _state = InferenceState.Init; // backer
+        protected InferenceState state
+        {
+            get => _state;
+            set
+            {
+                if (value == _state) return;
+                Debug.Log($"[Inference] {_state} → {value} (step {currentStep}/{actionChunkLength})");
+                _state = value;
+            }
+        }
         protected Kinematics kinematics;
         
         public InferenceManager(InferenceManagerSettings inferenceManagerSettings, InferenceClientSession session)
@@ -24,6 +34,7 @@ namespace PolicyClient
             // make input sources
             
             this.session = session; // should take a minimal object to send/request from
+            actionQueue = new Queue<float[]>();
         }
 
         /// <summary>

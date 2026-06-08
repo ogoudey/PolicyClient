@@ -43,10 +43,6 @@ namespace PolicyClient
         // Update is called once per frame
         void Update()
         {
-            if (!behavior.ready){
-                state = SystemState.Initializing;
-                return;
-            }
             if (behavior.HandleFrame())
             {
                 state = SystemState.Active;
