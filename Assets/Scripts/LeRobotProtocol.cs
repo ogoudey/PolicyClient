@@ -4,7 +4,6 @@ using Transport;
 using Google.Protobuf;
 using System;
 using UnityEngine;
-using System.Linq;
 
 namespace PolicyClient
 {
