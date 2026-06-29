@@ -8,8 +8,9 @@ namespace PolicyClient
     {
         [SerializeField] public int actionChunkLength = 50;
         [SerializeField] public int stepsAtToPrediction = 50;
-
         [SerializeField] public Kinematics kinematics; // Should be monobehavior I think - or not.
+        [SerializeField] public KinematicsInputType kinematicsInputType;
+
     
         public void OnValidate()
         {
