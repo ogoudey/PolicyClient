@@ -53,6 +53,22 @@ namespace Unity.V1 {
     static readonly grpc::Marshaller<global::Unity.V1.VersionRequest> __Marshaller_unity_v1_VersionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.VersionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Unity.V1.VersionResponse> __Marshaller_unity_v1_VersionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.VersionResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.GetEntitiesRequest> __Marshaller_unity_v1_GetEntitiesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.GetEntitiesRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.GetEntitiesResponse> __Marshaller_unity_v1_GetEntitiesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.GetEntitiesResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.NavigateToRequest> __Marshaller_unity_v1_NavigateToRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.NavigateToRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.NavigateToResponse> __Marshaller_unity_v1_NavigateToResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.NavigateToResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.ActionChunkRequest> __Marshaller_unity_v1_ActionChunkRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.ActionChunkRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.ActionChunkResponse> __Marshaller_unity_v1_ActionChunkResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.ActionChunkResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.GetObservationRequest> __Marshaller_unity_v1_GetObservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.GetObservationRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Unity.V1.GetObservationResponse> __Marshaller_unity_v1_GetObservationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Unity.V1.GetObservationResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Unity.V1.ActRequest, global::Unity.V1.ActResponse> __Method_Act = new grpc::Method<global::Unity.V1.ActRequest, global::Unity.V1.ActResponse>(
@@ -70,6 +86,38 @@ namespace Unity.V1 {
         __Marshaller_unity_v1_VersionRequest,
         __Marshaller_unity_v1_VersionResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Unity.V1.GetEntitiesRequest, global::Unity.V1.GetEntitiesResponse> __Method_GetEntities = new grpc::Method<global::Unity.V1.GetEntitiesRequest, global::Unity.V1.GetEntitiesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetEntities",
+        __Marshaller_unity_v1_GetEntitiesRequest,
+        __Marshaller_unity_v1_GetEntitiesResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Unity.V1.NavigateToRequest, global::Unity.V1.NavigateToResponse> __Method_NavigateTo = new grpc::Method<global::Unity.V1.NavigateToRequest, global::Unity.V1.NavigateToResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "NavigateTo",
+        __Marshaller_unity_v1_NavigateToRequest,
+        __Marshaller_unity_v1_NavigateToResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Unity.V1.ActionChunkRequest, global::Unity.V1.ActionChunkResponse> __Method_ActionChunk = new grpc::Method<global::Unity.V1.ActionChunkRequest, global::Unity.V1.ActionChunkResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ActionChunk",
+        __Marshaller_unity_v1_ActionChunkRequest,
+        __Marshaller_unity_v1_ActionChunkResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Unity.V1.GetObservationRequest, global::Unity.V1.GetObservationResponse> __Method_GetObservation = new grpc::Method<global::Unity.V1.GetObservationRequest, global::Unity.V1.GetObservationResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetObservation",
+        __Marshaller_unity_v1_GetObservationRequest,
+        __Marshaller_unity_v1_GetObservationResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -80,28 +128,38 @@ namespace Unity.V1 {
     [grpc::BindServiceMethod(typeof(AnimateService), "BindService")]
     public abstract partial class AnimateServiceBase
     {
-      /// <summary>
-      /// Basic capability: fire off a named action
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Unity.V1.ActResponse> Act(global::Unity.V1.ActRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      /// <summary>
-      /// Lets either side verify they're speaking the same version
-      /// before doing anything else — cheap insurance against
-      /// "Unity built against v1, Python is running v2" mismatches.
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Unity.V1.VersionResponse> GetVersion(global::Unity.V1.VersionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Unity.V1.GetEntitiesResponse> GetEntities(global::Unity.V1.GetEntitiesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Unity.V1.NavigateToResponse> NavigateTo(global::Unity.V1.NavigateToRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Unity.V1.ActionChunkResponse> ActionChunk(global::Unity.V1.ActionChunkRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Unity.V1.GetObservationResponse> GetObservation(global::Unity.V1.GetObservationRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -135,109 +193,125 @@ namespace Unity.V1 {
       {
       }
 
-      /// <summary>
-      /// Basic capability: fire off a named action
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Unity.V1.ActResponse Act(global::Unity.V1.ActRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Act(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      /// Basic capability: fire off a named action
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Unity.V1.ActResponse Act(global::Unity.V1.ActRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_Act, null, options, request);
       }
-      /// <summary>
-      /// Basic capability: fire off a named action
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::Unity.V1.ActResponse> ActAsync(global::Unity.V1.ActRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ActAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      /// Basic capability: fire off a named action
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::Unity.V1.ActResponse> ActAsync(global::Unity.V1.ActRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_Act, null, options, request);
       }
-      /// <summary>
-      /// Lets either side verify they're speaking the same version
-      /// before doing anything else — cheap insurance against
-      /// "Unity built against v1, Python is running v2" mismatches.
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Unity.V1.VersionResponse GetVersion(global::Unity.V1.VersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetVersion(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      /// Lets either side verify they're speaking the same version
-      /// before doing anything else — cheap insurance against
-      /// "Unity built against v1, Python is running v2" mismatches.
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::Unity.V1.VersionResponse GetVersion(global::Unity.V1.VersionRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetVersion, null, options, request);
       }
-      /// <summary>
-      /// Lets either side verify they're speaking the same version
-      /// before doing anything else — cheap insurance against
-      /// "Unity built against v1, Python is running v2" mismatches.
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::Unity.V1.VersionResponse> GetVersionAsync(global::Unity.V1.VersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetVersionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      /// Lets either side verify they're speaking the same version
-      /// before doing anything else — cheap insurance against
-      /// "Unity built against v1, Python is running v2" mismatches.
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::Unity.V1.VersionResponse> GetVersionAsync(global::Unity.V1.VersionRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetVersion, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.GetEntitiesResponse GetEntities(global::Unity.V1.GetEntitiesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEntities(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.GetEntitiesResponse GetEntities(global::Unity.V1.GetEntitiesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetEntities, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.GetEntitiesResponse> GetEntitiesAsync(global::Unity.V1.GetEntitiesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEntitiesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.GetEntitiesResponse> GetEntitiesAsync(global::Unity.V1.GetEntitiesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetEntities, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.NavigateToResponse NavigateTo(global::Unity.V1.NavigateToRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return NavigateTo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.NavigateToResponse NavigateTo(global::Unity.V1.NavigateToRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_NavigateTo, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.NavigateToResponse> NavigateToAsync(global::Unity.V1.NavigateToRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return NavigateToAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.NavigateToResponse> NavigateToAsync(global::Unity.V1.NavigateToRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_NavigateTo, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.ActionChunkResponse ActionChunk(global::Unity.V1.ActionChunkRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ActionChunk(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.ActionChunkResponse ActionChunk(global::Unity.V1.ActionChunkRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ActionChunk, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.ActionChunkResponse> ActionChunkAsync(global::Unity.V1.ActionChunkRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ActionChunkAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.ActionChunkResponse> ActionChunkAsync(global::Unity.V1.ActionChunkRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ActionChunk, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.GetObservationResponse GetObservation(global::Unity.V1.GetObservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetObservation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Unity.V1.GetObservationResponse GetObservation(global::Unity.V1.GetObservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetObservation, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.GetObservationResponse> GetObservationAsync(global::Unity.V1.GetObservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetObservationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Unity.V1.GetObservationResponse> GetObservationAsync(global::Unity.V1.GetObservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetObservation, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -254,7 +328,11 @@ namespace Unity.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Act, serviceImpl.Act)
-          .AddMethod(__Method_GetVersion, serviceImpl.GetVersion).Build();
+          .AddMethod(__Method_GetVersion, serviceImpl.GetVersion)
+          .AddMethod(__Method_GetEntities, serviceImpl.GetEntities)
+          .AddMethod(__Method_NavigateTo, serviceImpl.NavigateTo)
+          .AddMethod(__Method_ActionChunk, serviceImpl.ActionChunk)
+          .AddMethod(__Method_GetObservation, serviceImpl.GetObservation).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -266,6 +344,10 @@ namespace Unity.V1 {
     {
       serviceBinder.AddMethod(__Method_Act, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.ActRequest, global::Unity.V1.ActResponse>(serviceImpl.Act));
       serviceBinder.AddMethod(__Method_GetVersion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.VersionRequest, global::Unity.V1.VersionResponse>(serviceImpl.GetVersion));
+      serviceBinder.AddMethod(__Method_GetEntities, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.GetEntitiesRequest, global::Unity.V1.GetEntitiesResponse>(serviceImpl.GetEntities));
+      serviceBinder.AddMethod(__Method_NavigateTo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.NavigateToRequest, global::Unity.V1.NavigateToResponse>(serviceImpl.NavigateTo));
+      serviceBinder.AddMethod(__Method_ActionChunk, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.ActionChunkRequest, global::Unity.V1.ActionChunkResponse>(serviceImpl.ActionChunk));
+      serviceBinder.AddMethod(__Method_GetObservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Unity.V1.GetObservationRequest, global::Unity.V1.GetObservationResponse>(serviceImpl.GetObservation));
     }
 
   }
